@@ -1,0 +1,42 @@
+.store-header {
+  align-items:flex-end;
+  background-color: #232F3E;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 120px;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  z-index: 2;
+}
+
+.logo-store img {
+  height: 80px;
+  width: 100px;
+}
+
+.search-bar {
+  width: 35em;
+}
+
+.user-info {
+  color: white;
+  font-size: 1.5em;
+  width: 10em;
+}
+
+.icon-shopping-cart {
+  background-color: inherit;
+  background-image: url('../../images/shopping-cart.png');
+  background-size: cover;
+  border: none;
+  height: 60px;
+  margin-right: 20px;
+  width: 60px;
+}
+
+.icon-shopping-cart:hover {
+  cursor: pointer;
+}

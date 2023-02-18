@@ -1,0 +1,70 @@
+.main-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 150px;
+  border: 1px solid grey;
+  box-shadow: 10px 10px 5px -11px rgba(0,0,0,0.75);
+  background-color: #F0F2F2;
+  height: 500px;
+  width: 900px;
+}
+
+.form-frame {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 60%;
+  padding: 10px;
+}
+
+.form-frame h2 {
+  text-align: center;
+}
+
+.form-frame form {
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 50%;
+  width: 90%;
+}
+
+.form-frame label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-input{
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.card-cvc {
+  display: flex;
+}
+
+.card-cvc input{
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 20%;
+  margin-right: 170px;
+}
+
+.card-preview {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-preview button {
+  width: 50%;
+}
