@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux'
 import saveCard from '../redux/actions';
 
-function AddCardForm() {
+function AddCardForm({allCards, setAllCards}) {
   const [card, setState] = useState({
     number: "",
     expiry: "",
@@ -55,14 +55,7 @@ function AddCardForm() {
         ])
       );
     }    
-
   }
-
-  const refreshPage = () => {
-    window.location.reload(false);
-  }
-  
-
   const buttonHandler = () => {
     const cardToSave = {
       number: card.number,
@@ -80,6 +73,8 @@ function AddCardForm() {
     });
 
     saveCardInStorage();
+    setAllCards(JSON.parse(localStorage.getItem('card')))
+    console.log(allCards);
     
     Swal.fire({
       position: 'center',
@@ -88,7 +83,6 @@ function AddCardForm() {
       showConfirmButton: false,
       timer: 1500
     })
-    refreshPage();
   };
 
   return (

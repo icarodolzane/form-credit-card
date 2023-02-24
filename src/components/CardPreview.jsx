@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Cards from "react-credit-cards-2";
 import { Button } from "react-bootstrap";
 import "../styles/components/CardPreview.css";
 
-function CardPreview() {
+function CardPreview({allCards, setAllCards}) {
 
   const deleteCard = (number) => {
-    if(cards){
-      const cardsUpdated = cards.filter((card) => {
+    if(allCards){
+      const cardsUpdated = allCards.filter((card) => {
         return card.number !== number
       });
       console.log(cardsUpdated);
@@ -15,21 +15,17 @@ function CardPreview() {
         'card',
         JSON.stringify(cardsUpdated)
       );
-      window.location.reload(false);  
+      setAllCards(JSON.parse(localStorage.getItem('card')))
     }    
   };
-  const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const cards = JSON.parse(localStorage.getItem('card'));
-    if (cards) {
-     setCards(cards);
-    }
-  }, []);
+  }, [allCards])
+
   return (
       <div className="card-preview-container">
         {
-          cards.map((card) =>
+          allCards.map((card) =>
           <div className="card-preview" key={card.number}>
             <Cards
               number={card.number}
