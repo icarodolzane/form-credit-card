@@ -6,7 +6,7 @@
   border: 1px solid grey;
   box-shadow: 10px 10px 5px -11px rgba(0,0,0,0.75);
   background-color: #F0F2F2;
-  height: 500px;
+  height: 300px;
   width: 900px;
 }
 
@@ -14,17 +14,19 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100%;
   width: 60%;
-  padding: 10px;
+  padding: 5px;
 }
 
-.form-frame h2 {
+.form-frame h4 {
   text-align: center;
 }
 
-.form-frame form {
+
+
+.card-inputs{
   justify-content: center;
   align-self: center;
   display: flex;

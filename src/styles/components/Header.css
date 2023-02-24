@@ -32,9 +32,9 @@
   background-image: url('../../images/shopping-cart.png');
   background-size: cover;
   border: none;
-  height: 60px;
+  height: 50px;
   margin-right: 20px;
-  width: 60px;
+  width: 50px;
 }
 
 .icon-shopping-cart:hover {
