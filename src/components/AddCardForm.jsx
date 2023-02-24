@@ -37,26 +37,30 @@ function AddCardForm() {
     expiry: 'validade'
   }
 
-  // const saveCardInStorage = () => {
-  //   const cardToSave = {
-  //     number: card.number,
-  //     name: card.name,
-  //     cardType: card.cardType,
-  //   };
+  const saveCardInStorage = () => {
+    const cardToSave = {
+      number: card.number,
+      name: card.name,
+      cardType: card.cardType,
+    };
 
-  //   if(!localStorage.getItem('card')){
-  //     localStorage.setItem('card', JSON.stringify([cardToSave]));
-  //   }
-  //   else {
-  //     localStorage.setItem(
-  //       'card',
-  //       JSON.stringify([...JSON.parse(localStorage.getItem('card')), 
-  //       cardToSave
-  //       ])
-  //     );
-  //   }    
+    if(!localStorage.getItem('card')){
+      localStorage.setItem('card', JSON.stringify([cardToSave]));
+    }
+    else {
+      localStorage.setItem(
+        'card',
+        JSON.stringify([...JSON.parse(localStorage.getItem('card')), 
+        cardToSave
+        ])
+      );
+    }    
 
-  // }
+  }
+
+  const refreshPage = () => {
+    window.location.reload(false);
+  }
   
 
   const buttonHandler = () => {
@@ -74,6 +78,8 @@ function AddCardForm() {
       name: "",
       focus: "",
     });
+
+    saveCardInStorage();
     
     Swal.fire({
       position: 'center',
@@ -82,6 +88,7 @@ function AddCardForm() {
       showConfirmButton: false,
       timer: 1500
     })
+    refreshPage();
   };
 
   return (

@@ -1,4 +1,3 @@
-// import React, { useState, useEffect } from 'react';
 import AddCardForm from '../components/AddCardForm.jsx';
 import CardPreview from '../components/CardPreview.jsx';
 import Header from '../components/Header.jsx'
@@ -11,6 +10,7 @@ function Payment() {
     <div className="Payment">
       <AddCardForm />
       <CardPreview />
+      {/* <CardPreview cards={cards} /> */}
     </div>
     </>
   );

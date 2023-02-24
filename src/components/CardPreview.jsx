@@ -1,10 +1,9 @@
-// import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import Cards from "react-credit-cards-2";
 import { Button } from "react-bootstrap";
 import "../styles/components/CardPreview.css";
 
-function CardPreview({number, name}) {
+function CardPreview() {
 
   // const deleteCard = (number) => {
   //   if(cards){
@@ -18,26 +17,17 @@ function CardPreview({number, name}) {
   //     );  
   //   }    
   // };
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const cards = JSON.parse(localStorage.getItem('card'));
+    if (cards) {
+     setCards(cards);
+    }
+  }, []);
   return (
       <div className="card-preview-container">
         {
-           number && name ?
-           <div className="card-preview">
-            <Cards
-              number={number}
-              expiry={"********"}
-              cvc={"***"}
-              name={name}
-            />
-            <Button
-              variant="danger"
-              // onClick={() => deleteCard(card.number)}
-            >
-              Deletar cartão
-            </Button>
-        </div> : null 
-        }
-        {/* {
           cards.map((card) =>
           <div className="card-preview" key={card.number}>
             <Cards
@@ -45,7 +35,6 @@ function CardPreview({number, name}) {
               expiry={"********"}
               cvc={"***"}
               name={card.name}
-              focused={card.focus}
             />
             <Button
               variant="danger"
@@ -54,13 +43,8 @@ function CardPreview({number, name}) {
               Deletar cartão
             </Button>
           </div>)
-        } */}
+        }
       </div>
   );
 }
-const mapStateToProps = (globalState) => ({
-  number: globalState.card.number,
-  // cardType: globalState.card.cardType,
-  name: globalState.card.name,
-});
-export default connect(mapStateToProps)(CardPreview);
+export default CardPreview;
