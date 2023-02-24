@@ -3,7 +3,7 @@ import Cards from "react-credit-cards-2";
 import { Button } from "react-bootstrap";
 import "../styles/components/CardPreview.css";
 
-function CardPreview({allCards, setAllCards}) {
+function CardsList({allCards, setAllCards}) {
 
   const deleteCard = (number) => {
     if(allCards){
@@ -20,18 +20,19 @@ function CardPreview({allCards, setAllCards}) {
   };
 
   useEffect(() => {
+    console.log(allCards);
   }, [allCards])
 
   return (
       <div className="card-preview-container">
         {
-          allCards.map((card) =>
-          <div className="card-preview" key={card.number}>
+          allCards.map((card, index) =>
+          <div className="card-preview" key={card.number || index}>
             <Cards
-              number={card.number}
+              number={card.number || ''}
               expiry={"********"}
               cvc={"***"}
-              name={card.name}
+              name={card.name || ''}
             />
             <Button
               variant="danger"
@@ -44,4 +45,4 @@ function CardPreview({allCards, setAllCards}) {
       </div>
   );
 }
-export default CardPreview;
+export default CardsList;

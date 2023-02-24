@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux'
 import saveCard from '../redux/actions';
 
-function AddCardForm({allCards, setAllCards}) {
+function AddCardForm({_allCards, setAllCards}) {
   const [card, setState] = useState({
     number: "",
     expiry: "",
@@ -74,7 +74,6 @@ function AddCardForm({allCards, setAllCards}) {
 
     saveCardInStorage();
     setAllCards(JSON.parse(localStorage.getItem('card')))
-    console.log(allCards);
     
     Swal.fire({
       position: 'center',
